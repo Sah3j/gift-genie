@@ -163,13 +163,13 @@ const GiftForm: React.FC<Props> = ({ setGifts, setCard, setInputValues }) => {
                     <FormLabel>Description</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder='Tell us more about the person you are gifting'
+                        placeholder='Tell us about the person you are gifting'
                         className='resize-none text-base'
                         {...field}
                       />
                     </FormControl>
                     <FormDescription>
-                      Gifts generated will be revevent to the information you provide
+                      Gifts generated will be based on the information you provide
                     </FormDescription>
                     <FormMessage/>
                   </FormItem>
