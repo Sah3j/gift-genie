@@ -24,10 +24,18 @@ type Gift = {
   Reason: string
 }
 
+type InputValues = {
+  ocassion: string,
+  gender: string,
+  age: number,
+  description: string,
+  priceRange: string
+}
+
 type Props = {
   setGifts: React.Dispatch<React.SetStateAction<Array<Gift>>>;
   setCard: React.Dispatch<React.SetStateAction<string>>;
-  setInputValues: React.Dispatch<React.SetStateAction<object>>;
+  setInputValues: React.Dispatch<React.SetStateAction<InputValues | undefined>>;
 }
 
 const formSchema = z.object({
@@ -59,7 +67,7 @@ const GiftForm: React.FC<Props> = ({ setGifts, setCard, setInputValues }) => {
     mode: "onChange",
   })
 
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit = async (data: InputValues) => {
     setCard("loading")
     setInputValues(data)
     try {
